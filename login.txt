@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.pinkAccent),
+      debugShowCheckedModeBanner: false,
+      home:
+      Scaffold(backgroundColor: Colors.grey[400],
+        appBar: AppBar(
+          title:  Center (child: Text("LOGIN PAGE"))
+        ),
+        body: SingleChildScrollView(child: Column(children: [Container(height:320,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: NetworkImage(
+                  "https://www.pixelstalk.net/wp-content/uploads/2016/04/Pink-wallpaper-as-background-images-pictures.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+           SizedBox(height: 70),
+              Container(width: 300,
+                child: TextField( decoration: new InputDecoration(
+                labelText: "Enter Email",
+                  labelStyle: TextStyle(color: Colors.pinkAccent),
+
+                border: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                ),
+
+              ),
+                ),
+              ),
+          SizedBox(height: 40),
+          Container(width: 300,
+            child: TextField(obscureText: true,
+              decoration: new InputDecoration(
+              labelText: "Enter Password",
+              labelStyle: TextStyle(color: Colors.pinkAccent),
+
+              border: new OutlineInputBorder(
+                borderRadius: new BorderRadius.circular(25.0),
+
+              ),
+
+            ),),
+
+          ),
+          SizedBox(height: 80),
+          Container(width: 150,
+           child:   ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.pinkAccent, // background
+                  onPrimary: Colors.white, // foreground
+
+                ),
+
+                onPressed: () { },
+                child: Text('LOGIN'),
+              )
+          )
+        ]
+            ,
+        )
+        )
+      ),
+
+    );
+  }
+}
